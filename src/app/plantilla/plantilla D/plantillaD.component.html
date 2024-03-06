@@ -1,0 +1,19 @@
+<div class="card p-3 container">
+  <div class="row">
+    <div class="col-6">
+      <form-component
+        [formItems]="form"
+        [containsSearchButton]="true"
+      ></form-component>
+    </div>
+    <div class="col-3 d-flex justify-content-between align-items-center">
+      <button class="btn btn-primary">
+        <i class="fa fa-solid fa-plus me-1"></i>Generar
+      </button>
+      <input-component type="toggle"></input-component>
+      <button class="btn btn-primary">Importar</button>
+    </div>
+  </div>
+</div>
+
+<calendar-component></calendar-component>

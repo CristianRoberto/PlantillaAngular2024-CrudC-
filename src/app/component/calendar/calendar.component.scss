@@ -1,0 +1,53 @@
+#calendar-container {
+  background-color: white;
+  padding: 1%;
+}
+#calendar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+#calendar-title {
+  color: #c69d08;
+  font-weight: 600;
+  size: 24px;
+}
+#calendar-title::selection {
+  background-color: transparent;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+  text-align: center;
+  width: calc(100% / 7);
+  padding: 0%;
+}
+th::selection,
+td::selection {
+  background-color: transparent;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+td:hover:not(:empty) {
+  background-color: #add8e6;
+  cursor: pointer;
+}
+
+td:empty {
+  background-color: #ccc;
+}
+
+.coloredDiv {
+  width: 100%;
+}
+
+.light-text {
+  color: #FFFFFF; /* Color blanco */
+}
+

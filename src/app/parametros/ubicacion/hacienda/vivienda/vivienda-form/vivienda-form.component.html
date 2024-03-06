@@ -1,0 +1,16 @@
+<div class="bg-white">
+  <div class="px-4">
+
+  <div class="d-flex justify-content-end mb-3" *ngIf="pageFormType !== 'VISUALIZAR'">
+    <button class="btn btn-info d-flex alig-items-center" (click)="validateToSave()">
+      <i class="material-icons me-1">save</i>
+      Guardar
+    </button>
+  </div>
+
+  <form-component [formItems]="viviendaForm" [formName]="'viviendaForm'">
+  </form-component>
+  <form-component [formItems]="tipoViviendaForm" [formName]="'tipoViviendaForm'">
+  </form-component>
+
+</div>

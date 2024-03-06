@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-4 offset-3 text-center">
+    <ng-select
+      #ngSelectComponent
+      [items]="pagesToSearch"
+      [placeholder]="'Buscar...'"
+      (search)="onChangeText($event)"
+      (change)="onSelectRoute($event)"
+    ></ng-select>
+  </div>
+  <div class="col d-flex justify-content-end align-items-center">
+    <i class="material-icons text-warning cursor-pointer me-4">notifications</i>
+    <img
+      alt=""
+      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+      class="user-image"
+    />
+    <dropdown-component
+      [textButton]="userName"
+      [options]="userDropdownOptions"
+      [buttonClasses]="dropdownButtonClasses"
+    ></dropdown-component>
+    <i class="material-icons text-warning">manage_accounts</i>
+    <dropdown-component
+      [textButton]="profile"
+      [options]="profiles"
+      [buttonClasses]="dropdownButtonClasses"
+    ></dropdown-component>
+  </div>
+</div>

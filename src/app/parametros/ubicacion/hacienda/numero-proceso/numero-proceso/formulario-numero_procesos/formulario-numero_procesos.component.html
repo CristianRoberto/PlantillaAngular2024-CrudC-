@@ -1,0 +1,111 @@
+<div class="row">
+  <!-- column -->
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="form-body">
+          <div class="row">
+            <div class="col-md-9">
+        <!-- Dentro del HTML donde estás utilizando back-button-component -->
+              <back-button-component
+              [mainText]="'San Vicente'"
+              [textDetails]="backButtonDetails"
+              [contexto]="this"
+              [onBackFunction]="'redirectToprocesosRealizados'">
+              </back-button-component>
+
+              <div class="fecha-container">
+              <div class="fecha-box">
+              {{ fechaSeleccionada | date: 'dd/MM/yyyy' }}
+              </div>
+              </div>
+
+            </div>
+
+            <div class="col-md-3">
+              <div class="mb-3">
+                <div class="text-end">
+                  <button
+                    type="button"
+                    (click)="Guardar()"
+                    class="btn btn-info me-2"
+                  >
+                    <i class="fas fa-save"></i> Guardar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <!-- Columna Empacadora -->
+              <div class="col-md-6">
+                <div class="row align-items-center">
+                  <div class="col-md-3">
+                    <label class="azul">Empacadora:</label>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-primary btn-number">{{ selectedCodigoEmpacadora }}</button>
+                  </div>
+                  <div class="col-md-7">
+                    <ng-select
+                      #inputSelectlote
+                      [(ngModel)]="selected_empacadora"
+                      name="id_hacienda"
+                      placeholder="Seleccione"
+                      (change)="onChangeLote()"
+                    >
+                      <ng-option *ngFor="let car of dataTable" [value]="car.codigoCuadrilla">{{ car.codigoCuadrilla }}</ng-option>
+                    </ng-select>
+                  </div>
+                  
+                </div>
+              </div>
+            
+              <!-- Columna Cuadrilla -->
+              <div class="col-md-6">
+                <div class="row align-items-center">
+                  <div class="col-md-3">
+                    <label class="azul">Cuadrilla:</label>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-primary btn-number">{{ selectedCodigoCuadrilla }}</button>
+                  </div>
+                  <div class="col-md-7">
+                    <ng-select
+                      #inputSelectloteCuadrilla
+                      [(ngModel)]="selected_cuadrilla"
+                      name="id_hacienda"
+                      placeholder="Seleccione"
+                      (change)="onChangeCuadrilla()"
+                    >
+                      <ng-option *ngFor="let car2 of dataTable" [value]="car2.codigoCuadrilla">{{ car2.codigoCuadrilla }}</ng-option>
+                    </ng-select>
+                  </div>
+                  
+                </div>
+              </div>
+
+            </div><br>            
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row align-items-center">
+                  <div class="col-md-4">
+                    <label class="azul">N° Proceso:</label>
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-primary btn-number">1288</button>
+                  </div>
+               
+                </div>
+              </div>
+            </div>
+            
+
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

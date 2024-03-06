@@ -1,0 +1,34 @@
+<div class="bg-white">
+  <div class="px-4">
+    <back-button-component
+      [mainText]="backButtonOptions.mainText"
+      [onBackFunction]="backButtonOptions.onBackFunction"
+      [contexto]="this"
+    ></back-button-component>
+  </div>
+  <div
+    class="d-flex justify-content-end mb-3"
+    *ngIf="pageFormType !== 'VISUALIZAR'"
+  >
+    <button
+      class="btn btn-info d-flex alig-items-center"
+      (click)="validateToSave()"
+    >
+      <i class="material-icons me-1">save</i>
+      Guardar
+    </button>
+  </div>
+  <div>
+    <form-component [formItems]="haciendaForm" [formName]="'haciendaForm'">
+    </form-component>
+    <div class="text-warning fw-semibold ms-4 fs-5">Ubicación</div>
+    <form-component [formItems]="ubicacionForm" [formName]="'ubicacionForm'">
+    </form-component>
+    <div class="text-warning fw-semibold ms-4 fs-5">Ubicación PNB</div>
+    <form-component
+      [formItems]="ubicacionPNBForm"
+      [formName]="'ubicacionPNBForm'"
+    >
+    </form-component>
+  </div>
+</div>

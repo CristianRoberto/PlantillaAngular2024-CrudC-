@@ -1,0 +1,154 @@
+<!-- User profile -->
+<div class="user-profile">
+  <!-- User profile text-->
+  <div class="profile-text">SAFF</div>
+</div>
+<nav class="sidebar-nav">
+  <ul id="sidebarnav">
+    <!-- First level menu -->
+    <li
+      class="sidebar-item"
+      *ngFor="let menuLevel1 of sidebarnavItems"
+      [class.active]="levelActive[1] === menuLevel1.title"
+      (click)="menuLevel1.submenu.length != 0 ? '' : handleNotify()"
+      [routerLinkActive]="menuLevel1.submenu.length != 0 ? '' : 'active'"
+    >
+      <div class="nav-small-cap" *ngIf="menuLevel1.extralink">
+        <i
+          *ngIf="menuLevel1.icon && !menuLevel1.materialIcon"
+          [ngClass]="[menuLevel1.icon]"
+        ></i>
+
+        <span class="hide-menu">{{ menuLevel1.title }}</span>
+      </div>
+      <a
+        class="sidebar-link waves-effect waves-dark"
+        [routerLink]="menuLevel1.class === '' ? [menuLevel1.path] : null"
+        [ngClass]="[menuLevel1.class]"
+        *ngIf="!menuLevel1.extralink"
+        (click)="activeMenuAtPosition(1, menuLevel1.title)"
+        [routerLinkActive]="menuLevel1.submenu.length != 0 ? '' : 'active'"
+      >
+        <i
+          *ngIf="menuLevel1.icon && !menuLevel1.materialIcon"
+          [ngClass]="[menuLevel1.icon]"
+        ></i>
+        <i class="material-icons">
+          {{ menuLevel1.materialIcon }}
+        </i>
+        <span class="hide-menu"
+          >{{ menuLevel1.title }}
+          <span
+            *ngIf="menuLevel1.label != ''"
+            [ngClass]="[menuLevel1.labelClass]"
+            >{{ menuLevel1.label }}</span
+          >
+        </span>
+      </a>
+      <!-- Second level menu -->
+      <ul
+        aria-expanded="false"
+        class="collapse"
+        *ngIf="menuLevel1.submenu.length > 0"
+        [ngClass]="{ in: levelActive[1] === menuLevel1.title }"
+      >
+        <li
+          class="sidebar-item"
+          *ngFor="let menuLevel2 of menuLevel1.submenu"
+          (click)="menuLevel2.submenu.length != 0 ? '' : handleNotify()"
+          [class.active]="levelActive[2] === menuLevel2.title"
+          [routerLinkActive]="menuLevel2.submenu.length > 0 ? '' : 'active'"
+        >
+          <a
+            class="sidebar-link"
+            [routerLink]="
+              menuLevel2.submenu.length > 0 ? null : [menuLevel2.path]
+            "
+            [routerLinkActive]="
+              menuLevel2.submenu.length > 0 ? '' : 'router-link-active'
+            "
+            [ngClass]="[menuLevel2.class]"
+            *ngIf="!menuLevel2.extralink"
+            (click)="activeMenuAtPosition(2, menuLevel2.title)"
+          >
+            <i
+              *ngIf="menuLevel2.icon && !menuLevel2.materialIcon"
+              [ngClass]="[menuLevel2.icon]"
+            ></i>
+            <span class="hide-menu">{{ menuLevel2.title }}</span>
+          </a>
+          <!-- Third level menu -->
+          <ul
+            aria-expanded="false"
+            class="collapse Second-level"
+            *ngIf="menuLevel2.submenu.length > 0"
+            [ngClass]="{ in: levelActive[2] === menuLevel2.title }"
+          >
+            <li
+              class="sidebar-item"
+              *ngFor="let menuLevel3 of menuLevel2.submenu"
+              (click)="menuLevel3.submenu.length != 0 ? '' : handleNotify()"
+              [class.active]="levelActive[3] === menuLevel3.title"
+              [routerLinkActive]="menuLevel3.submenu.length > 0 ? '' : 'active'"
+            >
+              <a
+                class="sidebar-link"
+                [routerLink]="
+                  menuLevel3.submenu.length > 0 ? null : [menuLevel3.path]
+                "
+                [routerLinkActive]="
+                  menuLevel3.submenu.length > 0 ? '' : 'router-link-active'
+                "
+                [ngClass]="[menuLevel3.class]"
+                *ngIf="!menuLevel3.extralink"
+                (click)="activeMenuAtPosition(3, menuLevel3.title)"
+              >
+                <i
+                  *ngIf="menuLevel3.icon && !menuLevel3.materialIcon"
+                  [ngClass]="[menuLevel3.icon]"
+                ></i>
+                <span class="hide-menu">{{ menuLevel3.title }}</span>
+              </a>
+              <!-- Fourth level -->
+              <ul
+                aria-expanded="false"
+                class="collapse Second-level"
+                *ngIf="menuLevel3.submenu.length > 0"
+                [ngClass]="{ in: levelActive[3] === menuLevel3.title }"
+              >
+                <li
+                  class="sidebar-item"
+                  *ngFor="let menuLevel4 of menuLevel3.submenu"
+                  (click)="menuLevel4.submenu.length != 0 ? '' : handleNotify()"
+                  [class.active]="levelActive[4] === menuLevel4.title"
+                  [routerLinkActive]="
+                    menuLevel4.submenu.length > 0 ? '' : 'active'
+                  "
+                >
+                  <a
+                    class="sidebar-link"
+                    [routerLink]="
+                      menuLevel4.submenu.length > 0 ? null : [menuLevel4.path]
+                    "
+                    [routerLinkActive]="
+                      menuLevel4.submenu.length > 0 ? '' : 'router-link-active'
+                    "
+                    [ngClass]="[menuLevel4.class]"
+                    *ngIf="!menuLevel4.extralink"
+                    (click)="activeMenuAtPosition(4, menuLevel4.title)"
+                  >
+                    <i
+                      *ngIf="menuLevel4.icon && !menuLevel4.materialIcon"
+                      [ngClass]="[menuLevel4.icon]"
+                    ></i>
+                    <span class="hide-menu">{{ menuLevel4.title }}</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

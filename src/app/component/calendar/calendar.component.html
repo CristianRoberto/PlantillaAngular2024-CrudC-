@@ -1,0 +1,68 @@
+<div id="calendar-container">
+  <div id="calendar-header">
+    <div class="btn-group">
+      <button class="btn btn-outline-primary" (click)="goToPreviousMonth()">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button class="btn btn-outline-primary" (click)="goToCurrentMonth()">
+        Hoy
+      </button>
+      <button class="btn btn-outline-primary" (click)="goToNextMonth()">
+        <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+    <div id="calendar-title">
+      {{ comboMeses[mesSelected] }} {{ yearSelected }}
+    </div>
+    <button class="btn btn-outline-primary">Exportar</button>
+  </div>
+  <table>
+    <caption></caption>
+    <thead>
+      <tr>
+        <th *ngFor="let diaLabel of diasDeLaSemana">{{ diaLabel }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let semana of diasDelMes">
+        <td *ngFor="let dia of semana" (click)="dia && onClickDay(dia)">
+          <div>{{ dia }}</div>
+          <div
+            class="coloredDiv"
+            [style.background-color]="
+              getWeekColor(dia, mesSelected, yearSelected)
+            "
+            [ngClass]="{
+              'light-text': isBackgroundLight(dia, mesSelected, yearSelected)
+            }"
+          >
+            {{
+              isWeekLabel(dia, mesSelected, yearSelected)
+                ? "Semana " +
+                  getWeekOfYear(dia, mesSelected, yearSelected) +
+                  " PR"
+                : isPeriodo(dia, mesSelected, yearSelected)
+                ? "P1"
+                : "&nbsp;"
+            }}
+          </div>
+          <div
+            class="coloredDiv"
+            [ngStyle]="{
+              'background-color': isPA(dia, mesSelected, yearSelected)
+                ? getPrevWeekColor(dia, mesSelected, yearSelected)
+                : isFU(dia, mesSelected, yearSelected)
+                ? getNextWeekColor(dia, mesSelected, yearSelected)
+                : ''
+            }"
+            [ngClass]="{
+              'light-text': isBackgroundLight(dia, mesSelected, yearSelected)
+            }"
+          >
+            {{ validateFUPA(dia, mesSelected, yearSelected, 3) }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

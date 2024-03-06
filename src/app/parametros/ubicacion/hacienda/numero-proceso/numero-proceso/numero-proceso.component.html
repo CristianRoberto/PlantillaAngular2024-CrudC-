@@ -1,0 +1,121 @@
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-body">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="mb-3">
+                  <label class="azul">Hacienda</label>
+                  <ng-select
+                    #inputSelectHacienda
+                    [(ngModel)]="selected_hacienda"
+                    name="id_hacienda"
+                    placeholder="Seleccione"
+                    (change)="onChangeHacienda()"
+                  >
+                    <ng-option *ngFor="let car of dataTable" [value]="car.codigoHacienda">
+                      {{ car.codigoHacienda }}  - {{ car['hacienda'] }}
+                    </ng-option>
+                  </ng-select>
+                </div>
+                
+              </div>
+              <div class="col-md-3">
+                <div class="mb-3">
+                  <label class="azul">Fecha</label>
+                  <div class="input-group">
+                    <input
+                      #inputDateFecha
+                      class="form-control"
+                      placeholder="yyyy-mm-dd"
+                      name="dp"
+                      [(ngModel)]="model"
+                      ngbDatepicker
+                      [footerTemplate]="footerTemplate"
+                      #d="ngbDatepicker"
+                      (change)="onChangeFecha()"
+                    /> 
+                    <button
+                      class="btn btn-outline-secondary bi bi-calendar3"
+                      (click)="d.toggle()"
+                      type="button"
+                    >
+                      <i-feather class="feather-sm" name="calendar"></i-feather>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="mb-3">
+                  <div class="text-end">
+                    <button
+                      #buttonSearch
+                      type="submit"
+                      class="btn btn-info me-2"
+                      (click)="onSearch()"
+                    >
+                      <i class="fas fa-filter"></i> Buscar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <ng-template #footerTemplate>
+            <hr class="my-0" />
+            <button class="btn btn-primary btn-sm m-2 float-start">Today</button>
+            <button class="btn btn-secondary btn-sm m-2 float-end" >
+              Close
+            </button>
+          </ng-template>
+          <div>
+            <!-- <table-component
+              *ngIf="hasFiltered"
+              [columns]="columnsTable"
+              [dataTable]="dataTable"
+              [contexto]="this"
+              [clickOnActionRow]="'clickOnActionRow'"
+  
+            ></table-component> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <plantilla-a-component
+  [columnsTable]="columnsTable"
+  [originalDataTable]="dataTable"
+  [placeholderHeaderInputText]="'Buscar Numero Proceso...'"
+  [contexto]="this"
+  [onSaveRowData]="'onSaveRowTable'"
+  [tableInputsEditRow]="tableInputsEditRow"
+  keyNameTable="id"
+  [colsToFilterByText]="colsToFilterByText"
+  [defaultEmptyRowTable]="defaultEmptyRowTable"
+  [IdRowToClone]="IdRowToClone"
+  colIdToDisable="codigo"
+  titleReport="Proceso"
+  clickOnActionRow="clickOnActionTable"
+  onDeleteFunction="onDelete">
+</plantilla-a-component> -->
+
+
+
+
+ <plantilla-a-component
+  [columnsTable]="columnsTable"
+  [originalDataTable]="dataTable"
+  [placeholderHeaderInputText]="'Buscar Proceso...'"
+  [contexto]="this"
+  [onSaveRowData]="'onSaveRowTable'"
+  [tableInputsEditRow]="tableInputsEditRow"
+  [onChangeHeaderFilterForm]="'onChangeHeaderFilterForm'"
+  keyNameTable="id"
+
+></plantilla-a-component> 

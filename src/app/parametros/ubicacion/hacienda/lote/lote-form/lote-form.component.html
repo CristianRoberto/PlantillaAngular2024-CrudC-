@@ -1,0 +1,22 @@
+<div class="bg-white">
+  <div class="px-4">
+    <back-button-component [mainText]="backButtonData.mainText" [onBackFunction]="backButtonData.onBackFunction"
+      [textDetails]="backButtonData.textDetails" [contexto]="this"></back-button-component>
+  </div>
+  <div class="d-flex justify-content-end mb-3" *ngIf="pageFormType !== 'VISUALIZAR'">
+    <button class="btn btn-info d-flex alig-items-center" (click)="validateToSave()">
+      <i class="material-icons me-1">save</i>
+      Guardar
+    </button>
+  </div>
+  <div>
+    <form-component [formItems]="loteForm" [formName]="'loteForm'">
+    </form-component>
+    <div class="text-warning fw-semibold ms-4 fs-5">Hectáreas</div>
+    <form-component [formItems]="hectareasForm" [formName]="'hectareasForm'">
+    </form-component>
+    <div class="text-warning fw-semibold ms-4 fs-5">Área de aplicación</div>
+    <form-component [formItems]="aplicacionForm" [formName]="'aplicacionForm'">
+    </form-component>
+  </div>
+</div>

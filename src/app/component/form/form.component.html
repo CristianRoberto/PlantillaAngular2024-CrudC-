@@ -1,0 +1,42 @@
+<div class="row">
+  <div
+    *ngFor="let formItem of formItems"
+    class="mb-4 ps-4"
+    [ngClass]="{
+      col: formItem.colWidth === undefined || formItem.colWidth === null,
+      'col-1': formItem.colWidth === '1',
+      'col-2': formItem.colWidth === '2',
+      'col-3': formItem.colWidth === '3',
+      'col-4': formItem.colWidth === '4',
+      'col-5': formItem.colWidth === '5',
+      'col-6': formItem.colWidth === '6',
+      'col-7': formItem.colWidth === '7',
+      'col-8': formItem.colWidth === '8',
+      'col-9': formItem.colWidth === '9',
+      'col-10': formItem.colWidth === '10',
+      'col-11': formItem.colWidth === '11',
+      'col-12': formItem.colWidth === '12',
+    }"
+  >
+    <input-component
+      [id]="formItem.id"
+      [type]="formItem.type"
+      [options]="formItem.options"
+      [label]="formItem.label"
+      [labelPosition]="formItem.labelPosition"
+      [placeholder]="formItem.placeholder"
+      [defaultValue]="formItem.defaultValue"
+      [disabled]="formItem.disabled"
+      [contexto]="this"
+      [onChangeFunction]="'onChangeForm'"
+    ></input-component>
+  </div>
+  <div
+    class="col d-flex justify-content-center align-items-center"
+    *ngIf="containsSearchButton"
+  >
+    <button class="btn btn-info" (click)="onSearchButton()">
+      <i class="fas fa-filter me-2"></i>Buscar
+    </button>
+  </div>
+</div>
