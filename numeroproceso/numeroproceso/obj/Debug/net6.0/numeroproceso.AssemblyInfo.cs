@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("numeroproceso")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b675b899666749eb2801a20bebfd0f6289ea6404")]
 [assembly: System.Reflection.AssemblyProductAttribute("numeroproceso")]
 [assembly: System.Reflection.AssemblyTitleAttribute("numeroproceso")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

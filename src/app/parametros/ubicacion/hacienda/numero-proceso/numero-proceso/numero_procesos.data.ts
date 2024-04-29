@@ -13,29 +13,34 @@ export const ProcesoData: IProcesoData = {
   // pageSize: TableComponentData.defaultRowPerPage,
   columns: [
     {
-      title: "Hacienda,",//colunnaPrincipal
+      title: "Hacienda,",
       dataIndex: "codigoHacienda",
-      children: [
-        { title: "Código", dataIndex: "codigoHacienda" },
-        { title: "Descripción", dataIndex: "hacienda" } 
-      ],
-      align: "center",
-      // sortActive: true,
+      dataIndexesToJoin: ["codigoHacienda", "nombreHacienda"],
+      width: "200px",
+      sortActive: true,
+      colType: "string",
     },
+
+
+
     {
       title: "Empacadora,",
       dataIndex: "codigoEmpacador",
-      children: [
-        { title: "Código", dataIndex: "codigoEmpacador" },
-        { title: "Descripción", dataIndex: "empacadora" }
-      ],
-      // sortActive: true,
+      dataIndexesToJoin: ["codigoEmpacador", "nombreEmpacador"],
+      width: "200px",
+      sortActive: true,
+      colType: "string",
     },
     {
       title: "Cuadrilla,",
       dataIndex: "codigoCuadrilla",
-      // sortActive: true,
-      colType: "number",
+
+
+      dataIndexesToJoin: ["codigoCuadrilla", "nombreCuadrilla"],
+      width: "200px",
+      sortActive: true,
+      colType: "string",
+
     },
     {
       title: "N° proceso",

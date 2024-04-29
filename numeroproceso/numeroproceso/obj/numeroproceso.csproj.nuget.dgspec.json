@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cgilces\\Source\\repos\\numeroproceso\\numeroproceso\\numeroproceso.csproj": {}
+    "C:\\Users\\Cgilces\\OneDrive - Junta de Beneficencia de Guayaquil\\Escritorio\\portal-saff-dev\\numeroproceso\\numeroproceso\\numeroproceso.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cgilces\\Source\\repos\\numeroproceso\\numeroproceso\\numeroproceso.csproj": {
+    "C:\\Users\\Cgilces\\OneDrive - Junta de Beneficencia de Guayaquil\\Escritorio\\portal-saff-dev\\numeroproceso\\numeroproceso\\numeroproceso.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cgilces\\Source\\repos\\numeroproceso\\numeroproceso\\numeroproceso.csproj",
+        "projectUniqueName": "C:\\Users\\Cgilces\\OneDrive - Junta de Beneficencia de Guayaquil\\Escritorio\\portal-saff-dev\\numeroproceso\\numeroproceso\\numeroproceso.csproj",
         "projectName": "numeroproceso",
-        "projectPath": "C:\\Users\\Cgilces\\Source\\repos\\numeroproceso\\numeroproceso\\numeroproceso.csproj",
+        "projectPath": "C:\\Users\\Cgilces\\OneDrive - Junta de Beneficencia de Guayaquil\\Escritorio\\portal-saff-dev\\numeroproceso\\numeroproceso\\numeroproceso.csproj",
         "packagesPath": "C:\\Users\\Cgilces\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cgilces\\Source\\repos\\numeroproceso\\numeroproceso\\obj\\",
+        "outputPath": "C:\\Users\\Cgilces\\OneDrive - Junta de Beneficencia de Guayaquil\\Escritorio\\portal-saff-dev\\numeroproceso\\numeroproceso\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cgilces\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,7 +48,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.4, )"
+              "version": "[6.0.6, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

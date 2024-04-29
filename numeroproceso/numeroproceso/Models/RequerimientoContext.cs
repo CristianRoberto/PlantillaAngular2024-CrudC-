@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using numeroproceso.Models;
 
 namespace numeroproceso.Models
 {
@@ -24,6 +23,8 @@ namespace numeroproceso.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+
+
             }
         }
 
@@ -65,17 +66,17 @@ namespace numeroproceso.Models
                     .HasColumnName("cierreTransaccional");
 
                 entity.Property(e => e.CodigoCuadrilla)
-                    .HasMaxLength(255)
+                    .HasMaxLength(4)
                     .IsUnicode(false)
                     .HasColumnName("codigoCuadrilla");
 
                 entity.Property(e => e.CodigoEmpacador)
-                    .HasMaxLength(255)
+                    .HasMaxLength(4)
                     .IsUnicode(false)
                     .HasColumnName("codigoEmpacador");
 
                 entity.Property(e => e.CodigoHacienda)
-                    .HasMaxLength(255)
+                    .HasMaxLength(4)
                     .IsUnicode(false)
                     .HasColumnName("codigoHacienda");
 
@@ -89,21 +90,32 @@ namespace numeroproceso.Models
                     .HasColumnName("fecha");
 
                 entity.Property(e => e.FechaActualizacion)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("fechaActualizacion");
 
                 entity.Property(e => e.FechaCreacion)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("fechaCreacion");
-
-                //entity.Property(e => e.HoraActualizacion).HasColumnName("horaActualizacion");
-
-                //entity.Property(e => e.HoraCreacion).HasColumnName("horaCreacion");
 
                 entity.Property(e => e.MenuId)
                     .HasMaxLength(255)
                     .IsUnicode(false)
                     .HasColumnName("menuId");
+
+                entity.Property(e => e.NombreCuadrilla)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("nombreCuadrilla");
+
+                entity.Property(e => e.NombreEmpacador)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("nombreEmpacador");
+
+                entity.Property(e => e.NombreHacienda)
+                    .HasMaxLength(30)
+                    .IsUnicode(false)
+                    .HasColumnName("nombreHacienda");
 
                 entity.Property(e => e.NumeroProceso).HasColumnName("numeroProceso");
 
@@ -124,79 +136,3 @@ namespace numeroproceso.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
-
-
-
-
-
-
-
-//using System;
-//using System.Collections.Generic;
-//using Microsoft.EntityFrameworkCore;
-//using Microsoft.EntityFrameworkCore.Metadata;
-
-//namespace backEnd.Models
-//{
-//    public partial class RequerimientoContext : DbContext
-//    {
-//        public RequerimientoContext()
-//        {
-//        }
-
-//        public RequerimientoContext(DbContextOptions<RequerimientoContext> options)
-//            : base(options)
-//        {
-//        }
-
-//        public virtual DbSet<Requerimiento> Requerimientos { get; set; } = null!;
-
-//        optionsBuilder protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-
-//        }
-
-//        protected override void OnModelCreating(ModelBuilder modelBuilder)
-//        {
-//            modelBuilder.Entity<Requerimiento>(entity =>
-//            {
-//                entity.ToTable("Requerimiento");
-
-//                entity.Property(e => e.Id).HasColumnName("id");
-
-//                entity.Property(e => e.cantidad_bultos).HasColumnName("cantidad_bultos");
-
-//                entity.Property(e => e.cantidad_contenedores_unidades).HasColumnName("cantidad_contenedores_unidades");
-
-//                entity.Property(e => e.deposito_devolucion_registro_vacio)
-//                    .HasMaxLength(100)
-//                    .IsUnicode(false)
-//                    .HasColumnName("deposito_devolucion_registro_vacio");
-
-//                entity.Property(e => e.dimensiones)
-//                    .HasMaxLength(30)
-//                    .IsUnicode(false)
-//                    .HasColumnName("dimensiones");
-
-//                entity.Property(e => e.direccion_bodega)
-//                    .HasMaxLength(255)
-//                    .IsUnicode(false)
-//                    .HasColumnName("direccion_bodega");
-
-//                entity.Property(e => e.tipo_carga)
-//                    .HasMaxLength(30)
-//                    .IsUnicode(false)
-//                    .HasColumnName("tipo_carga");
-
-//                entity.Property(e => e.tipo_contenedor)
-//                    .HasMaxLength(30)
-//                    .IsUnicode(false)
-//                    .HasColumnName("tipo_contenedor");
-//            });
-
-//            OnModelCreatingPartial(modelBuilder);
-//        }
-
-//        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-//    }
-//}
